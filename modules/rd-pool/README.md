@@ -1,5 +1,5 @@
 <a href="https://terraform.io">
-    <img src=".github/terraform_logo.svg" alt="Terraform logo" title="Terraform" align="right" height="50" />
+    <img src="../../.github/terraform_logo.svg" alt="Terraform logo" title="Terraform" align="right" height="50" />
 </a>
 
 # UltraDNS RD-Pool Consul-Terraform-Sync module
@@ -12,6 +12,8 @@
 - [UltraDNS Provider](https://registry.terraform.io/providers/ultradns/ultradns/latest/docs)
 
 ## Usage
+
+Record data of RD-pool will be grouped based on service name and record type.
 
 ### Using Consul client meta
 
