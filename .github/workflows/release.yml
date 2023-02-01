@@ -1,0 +1,37 @@
+name: Release_Workflow
+on: 
+  push:
+    branches:
+      - master
+jobs:
+  Release_Job:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - 
+        name: Checkout
+        uses: actions/checkout@v3
+      -
+        name: HashiCorp - Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+      -
+        name: Validate Main Module(Record)
+        run: |
+          terraform fmt -check
+          terraform init
+          terraform validate
+      - 
+        name: Validate Sub Module(RD-Pool)
+        run: |
+          cd ./modules/rd-pool
+          terraform fmt -check
+          terraform init
+          terraform validate
+      - 
+        name: Fetching Module Version
+        run: echo "MODULE_VERSION=$(cat .module-version)" >> $GITHUB_ENV 
+      -
+        name: Create Tag
+        run: |
+          git tag ${{ env.MODULE_VERSION }}
+          git push origin ${{ env.MODULE_VERSION }}

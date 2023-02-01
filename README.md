@@ -91,9 +91,9 @@ No modules.
 | [ultradns_host_url](#) 		| UltraDNS hosturl 																| `string` 		| n/a   |   yes    |
 | [zone_name](#) 				| Name of the zone. 															| `string` 		| n/a   |   yes    |
 | [owner_name](#) 				| The domain name of the owner of the RRSet. 									| `string` 		| n/a   |   yes    |
-| [record_type](#)  			| Record type of the RRSet.Supported values are: A,AAAA,1,28.				 	| `string` 		| A		|   yes    |
+| [record_type](#)  			| Record type of the RRSet.Supported values are: A,AAAA,1,28.				 	| `string` 		| A		|   no     |
 | [record_data](#)				| The data for the record. 														| `list(string)`| n/a   |   yes    |
-| [ttl](#) 						| The time to live (in seconds) for the record.	 								| `number` 		| 120   |   yes    |
+| [ttl](#) 						| The time to live (in seconds) for the record.	 								| `number` 		| 120   |   no     |
 | [services](#) 				| Consul services monitored by Consul Terraform Sync 							| <pre>map(<br>    object({<br>      id        = string<br>      name      = string<br>      address   = string<br>      port      = number<br>      meta      = map(string)<br>      tags      = list(string)<br>      namespace = string<br>      status    = string<br><br>      node                  = string<br>      node_id               = string<br>      node_address          = string<br>      node_datacenter       = string<br>      node_tagged_addresses = map(string)<br>      node_meta             = map(string)<br>    })<br>  )</pre> | n/a | yes |
 
 

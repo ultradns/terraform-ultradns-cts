@@ -1,4 +1,4 @@
 output "services" {
-    value = ultradns_record.record
-    description = "Services record details."
+  value       = ultradns_record.record
+  description = "Services record details."
 }
