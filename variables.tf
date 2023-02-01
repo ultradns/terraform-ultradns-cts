@@ -39,28 +39,28 @@ variable "ultradns_host_url" {
 
 variable "zone_name" {
   description = "Name of the zone."
-  type = string
+  type        = string
 }
 
 variable "owner_name" {
   description = "The domain name of the owner of the RRSet."
-  type = string
+  type        = string
 }
 
 variable "record_type" {
   description = "Record type of the RRSet.Supported values are: A,AAAA,1,28. Defaults to A"
-  type = string
-  default = "A"
+  type        = string
+  default     = "A"
 }
 
 variable "record_data" {
   description = "The data for the record."
-  type = list
-  default = []
+  type        = list(any)
+  default     = []
 }
 
 variable "ttl" {
   description = "The time to live (in seconds) for the record."
-  type = number
-  default = 120
+  type        = number
+  default     = 120
 }
